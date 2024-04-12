@@ -1,6 +1,4 @@
-# MODIFY ME TO IMPLEMENT YOUR SOLUTION
-# TO PROBLEM 3: GENERATE BINARY NUMBER STRINGS
-#
+
 # NAME:         Nicholas Ngobi
 # ASSIGNMENT:   Project 2: Stacks & Queues
 
@@ -10,16 +8,16 @@ from Queue import Queue
 # front of queue begins @ '1', returns empty Queue otherwise
 def generate_binary_numbers(N):
     temp   =  Queue([]) # temporary queue 
-    outPut =  Queue([]) ## The real queue to store binary numbers
+    Output =  Queue([]) ## The real queue to store binary numbers
     if N < 1:
         return Queue([]) #Empty queue
     temp.enq("1") # adding "1" to the output queue
     for i in range(N):
         current = temp.deq() # r
-        outPut.enq(current)
+        Output.enq(current)
         temp.enq(current + "0")
         temp.enq(current  +"1")
-    return outPut
+    return output
         
 def main():
     generate_binary_numbers(2).print()
